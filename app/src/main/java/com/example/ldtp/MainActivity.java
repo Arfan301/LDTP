@@ -3,11 +3,11 @@ package com.example.ldtp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.SpannableStringBuilder;
 import android.view.View;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
-
     private EditText display;
 
     @Override
@@ -17,14 +17,6 @@ public class MainActivity extends AppCompatActivity {
 
         display = findViewById(R.id.userInput);
         display.setShowSoftInputOnFocus(false);
-        display.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (getString(R.string.display).equals(display.getText().toString())){
-                    display.setText("");
-                }
-            }
-        });
     }
 
     private void updateText(String addInput){
@@ -35,9 +27,10 @@ public class MainActivity extends AppCompatActivity {
 
         if(getString(R.string.display).equals(display.getText().toString())){
             display.setText(addInput);
+            display.setSelection(cursorPos + 1);
         }else {
             display.setText(String.format("%s%s%s", leftStr, addInput, rightStr));
-//            display.setSelection(cursorPos + 1);
+            display.setSelection(cursorPos + 1);
         }
     }
 
@@ -79,5 +72,21 @@ public class MainActivity extends AppCompatActivity {
 
     public void nineBTN(View view){
         updateText("9");
+    }
+
+    public void clearBTN(View view){
+        display.setText("");
+    }
+
+    public void backBTN(View view){
+        int cursorPos = display.getSelectionStart();
+        int textLen = display.getText().length();
+
+        if (cursorPos != 0 &&  textLen != 0){
+            SpannableStringBuilder selection = (SpannableStringBuilder) display.getText();
+            selection.replace(cursorPos - 1, cursorPos, "");
+            display.setText(selection);
+            display.setSelection(cursorPos - 1);
+        }
     }
 }

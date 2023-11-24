@@ -21,6 +21,8 @@ public class MainLayout extends AppCompatActivity {
         binding = ActivityMainLayoutBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         replaceToActivity();
+//        replaceFragment(new HistoryFragment());
+
 
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
 

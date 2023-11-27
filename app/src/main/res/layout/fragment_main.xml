@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainFragment">
+    tools:context=".MainFragment"
+    android:padding="3dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -14,7 +15,7 @@
             android:id="@+id/relativeLayout"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:background="@drawable/gradient"
+
             app:layout_constraintBottom_toTopOf="@+id/userInput"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -27,20 +28,20 @@
                 android:fontFamily="monospace"
                 android:text="LDTP"
                 android:textAlignment="center"
-                android:textColor="@android:color/white"
-                android:textSize="34sp" />
+                android:textColor="@android:color/black"
+                android:textSize="34sp"
+                android:textStyle="bold" />
         </RelativeLayout>
 
         <EditText
             android:id="@+id/userInput"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:background="#BCBCBC"
-            android:text="@string/display"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/display_background"
             android:textSize="60px"
             app:layout_constraintBottom_toTopOf="@+id/tableLayout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <TableLayout
             android:id="@+id/tableLayout"

@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.text.SpannableStringBuilder;
 import android.view.View;
 import android.widget.EditText;
-
 import com.example.ldtp.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
@@ -29,13 +28,9 @@ public class MainActivity extends AppCompatActivity {
                     replaceFragment(new MainFragment());
                     break;
 
-//                case R.id.history:
-//                    replaceFragment(new HistoryFragment());
-//                    break;
-//
-//                case R.id.profile:
-//                    replaceFragment(new NotifFragment());
-//                    break;
+                case R.id.history:
+                    replaceFragment(new HistoryFragment());
+                    break;
             }
             return true;
         });

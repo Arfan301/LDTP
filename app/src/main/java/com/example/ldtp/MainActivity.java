@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
                 replaceFragment(new MainFragment());
             } else if (item.getItemId() == R.id.history) {
                 replaceFragment(new HistoryFragment());
+            } else if (item.getItemId() == R.id.profile) {
+                replaceFragment(new ProfileFragment());
             }
             return true;
         });
